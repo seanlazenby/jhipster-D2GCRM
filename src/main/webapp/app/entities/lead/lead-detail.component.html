@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="lead">
+            <h2><span>Lead</span> {{lead.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Lead Name</span></dt>
+                <dd>
+                    <span>{{lead.leadName}}</span>
+                </dd>
+                <dt><span>Lead Phone</span></dt>
+                <dd>
+                    <span>{{lead.leadPhone}}</span>
+                </dd>
+                <dt><span>Leadid</span></dt>
+                <dd>
+                    <span>{{lead.leadid}}</span>
+                </dd>
+                <dt><span>Title</span></dt>
+                <dd>
+                    <span>{{lead.title}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{lead.status}}</span>
+                </dd>
+                <dt><span>Active</span></dt>
+                <dd>
+                    <span>{{lead.active}}</span>
+                </dd>
+                <dt><span>Hotel</span></dt>
+                <dd>
+                    <span>{{lead.hotel}}</span>
+                </dd>
+                <dt><span>Rooms</span></dt>
+                <dd>
+                    <span>{{lead.rooms}}</span>
+                </dd>
+                <dt><span>Contact</span></dt>
+                <dd>
+                    <span>{{lead.contact}}</span>
+                </dd>
+                <dt><span>Officetel</span></dt>
+                <dd>
+                    <span>{{lead.officetel}}</span>
+                </dd>
+                <dt><span>Cell</span></dt>
+                <dd>
+                    <span>{{lead.cell}}</span>
+                </dd>
+                <dt><span>Street 1</span></dt>
+                <dd>
+                    <span>{{lead.street1}}</span>
+                </dd>
+                <dt><span>Street 2</span></dt>
+                <dd>
+                    <span>{{lead.street2}}</span>
+                </dd>
+                <dt><span>City</span></dt>
+                <dd>
+                    <span>{{lead.city}}</span>
+                </dd>
+                <dt><span>State</span></dt>
+                <dd>
+                    <span>{{lead.state}}</span>
+                </dd>
+                <dt><span>Postalcode</span></dt>
+                <dd>
+                    <span>{{lead.postalcode}}</span>
+                </dd>
+                <dt><span>Country</span></dt>
+                <dd>
+                    <span>{{lead.country}}</span>
+                </dd>
+                <dt><span>Website</span></dt>
+                <dd>
+                    <span>{{lead.website}}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{lead.email}}</span>
+                </dd>
+                <dt><span>Followup</span></dt>
+                <dd>
+                    <span>{{lead.followup}}</span>
+                </dd>
+                <dt><span>Comment</span></dt>
+                <dd>
+                    <span>{{lead.comment}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/lead', lead.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

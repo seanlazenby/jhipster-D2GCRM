@@ -1,0 +1,23 @@
+{
+    "name": "Office",
+    "fields": [
+        {
+            "fieldName": "officeCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "officeCountry",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190616220727",
+    "entityTableName": "office",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
