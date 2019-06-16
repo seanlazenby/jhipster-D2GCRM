@@ -1,0 +1,16 @@
+version: '2'
+services:
+  d2gcrm-mongodb:
+    image: mongo:4.0.10
+    ports:
+      - '27017:27017'
+    command: mongos --configdb d2gcrm-mongodb-config
+  d2gcrm-mongodb-node:
+    build:
+      context: .
+      dockerfile: mongodb/MongoDB.Dockerfile
+    command: mongod --replSet rs1 --noprealloc --smallfiles
+  d2gcrm-mongodb-config:
+    image: mongo:4.0.10
+    container_name: d2gcrm-mongodb-config
+    command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
