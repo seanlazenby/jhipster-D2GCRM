@@ -1,0 +1,125 @@
+entity Region {
+	regionName String,
+    regionCode String
+}
+entity Office{
+	officeCity String,
+    officeCountry String
+}
+entity Country {
+	countryName String,
+    countryCode String
+    
+}
+entity Lead {
+	LeadName String,
+    leadPhone String,
+    leadid String,
+    Title String,
+    Status String,
+    Active String,
+    Hotel String,
+    Rooms String,
+    Contact String,
+    Officetel String,
+    Cell String,
+    Street1 String,
+    Street2 String,
+    City String,
+    State String,
+    postalcode String,
+    Country String,
+    Website String,
+    Email String,
+    Followup String,
+    Comment String
+    
+}
+entity Hotel {
+	hotelName String
+}    
+// an ignored comment
+/** not an ignored comment */
+
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Department {
+	departmentName String required
+}
+entity Task {
+	title String,
+	description String
+}
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long
+}
+
+entity Job {
+	jobTitle String,
+	minSalary Long,
+	maxSalary Long
+}
+
+entity JobHistory {
+	startDate Instant,
+	endDate Instant,
+	language Language
+}
+
+enum Language {
+    ENGLISH
+}
+
+relationship OneToOne {
+	Country{region} to Region
+}
+
+relationship OneToOne {
+	Location{country} to Country
+}
+
+relationship OneToOne {
+	Department{location} to Location
+}
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job}
+}
+
+relationship OneToMany {
+	Employee{job} to Job,
+
+	Department{employee} to
+
+	Employee
+}
+
+relationship ManyToOne {
+	Employee{manager} to Employee
+}
+
+relationship OneToOne {
+	JobHistory{job} to Job,
+	JobHistory{department} to Department,
+	JobHistory{employee} to Employee
+}
+
+// Set pagination options
+paginate JobHistory, Employee with infinite-scroll
+paginate Job with pagination
+
+service all with serviceImpl except Employee, Job
