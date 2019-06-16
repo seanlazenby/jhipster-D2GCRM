@@ -1,0 +1,129 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-lead-heading">Create or edit a Lead</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_leadName">Lead Name</label>
+                    <input type="text" class="form-control" name="leadName" id="field_leadName"
+                           formControlName="leadName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_leadPhone">Lead Phone</label>
+                    <input type="text" class="form-control" name="leadPhone" id="field_leadPhone"
+                           formControlName="leadPhone"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_leadid">Leadid</label>
+                    <input type="text" class="form-control" name="leadid" id="field_leadid"
+                           formControlName="leadid"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                           formControlName="title"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_active">Active</label>
+                    <input type="text" class="form-control" name="active" id="field_active"
+                           formControlName="active"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_hotel">Hotel</label>
+                    <input type="text" class="form-control" name="hotel" id="field_hotel"
+                           formControlName="hotel"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_rooms">Rooms</label>
+                    <input type="text" class="form-control" name="rooms" id="field_rooms"
+                           formControlName="rooms"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_contact">Contact</label>
+                    <input type="text" class="form-control" name="contact" id="field_contact"
+                           formControlName="contact"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_officetel">Officetel</label>
+                    <input type="text" class="form-control" name="officetel" id="field_officetel"
+                           formControlName="officetel"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cell">Cell</label>
+                    <input type="text" class="form-control" name="cell" id="field_cell"
+                           formControlName="cell"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_street1">Street 1</label>
+                    <input type="text" class="form-control" name="street1" id="field_street1"
+                           formControlName="street1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_street2">Street 2</label>
+                    <input type="text" class="form-control" name="street2" id="field_street2"
+                           formControlName="street2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                           formControlName="city"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_state">State</label>
+                    <input type="text" class="form-control" name="state" id="field_state"
+                           formControlName="state"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_postalcode">Postalcode</label>
+                    <input type="text" class="form-control" name="postalcode" id="field_postalcode"
+                           formControlName="postalcode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_website">Website</label>
+                    <input type="text" class="form-control" name="website" id="field_website"
+                           formControlName="website"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                           formControlName="email"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_followup">Followup</label>
+                    <input type="text" class="form-control" name="followup" id="field_followup"
+                           formControlName="followup"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_comment">Comment</label>
+                    <input type="text" class="form-control" name="comment" id="field_comment"
+                           formControlName="comment"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
